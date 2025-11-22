@@ -1,26 +1,29 @@
 var btn  = document.querySelector('button')
-var main = document.querySelector('#main')
+var h1 = document.querySelector('h1')
+var inner = document.querySelector('#inner')
+var a= 0;
+
+
+
 btn.addEventListener('click',function(){
-    var div = document.createElement('div')
-    
-    var x = Math.random()*100
-    var y = Math.random()*100
-    var r = Math.random()*360
+    btn.style.pointerEvents = 'none';
+
+    var num =  Math.floor(Math.random()*100)+50
+    console.log(num);
+
+   var int =  setInterval(()=>{
+        a++
+        h1.innerHTML = a +'%'
+        inner.style.width = a+'%'
 
 
-    var c1 = Math.floor(Math.random()*256)
-    var c2 = Math.floor(Math.random()*256)
-    var c3 = Math.floor(Math.random()*256)
-
-    div.style.height='100px'
-    div.style.width='100px'
-    div.style.position='absolute'
-    div.style.left = x+'%'
-    div.style.top = y+'%'
-    div.style.rotate = r+'deg'
-    div.style.backgroundColor = `rgb(${c1},${c2},${c3})`
-
-    main.appendChild(div)
+    },num)
+    setTimeout(()=>{
+        clearInterval(int)
+        btn.innerHTML = 'Downloaded'
+        btn.style.opacity = 0.5
+        console.log('downloaded in ',num/10)
+    },num*100)
 })
 
 
