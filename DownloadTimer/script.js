@@ -8,7 +8,7 @@ var a= 0;
 btn.addEventListener('click',function(){
     btn.style.pointerEvents = 'none';
 
-    var num =  Math.floor(Math.random()*100)+50
+    var num =  Math.floor(Math.random()*100)+20
     console.log(num);
 
    var int =  setInterval(()=>{
