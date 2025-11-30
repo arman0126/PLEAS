@@ -6,9 +6,14 @@
     <title>Arman's JavaScript Projects</title>
 
     <style>
-        body {
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: Arial, sans-serif;
             background: #f5f5f5;
         }
@@ -18,7 +23,7 @@
             min-height: 100vh;
         }
 
-        /* LEFT SIDE */
+        /* LEFT FIXED PANEL */
         .left {
             width: 40%;
             background: #111;
@@ -26,83 +31,116 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 20px;
+            padding: 25px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
         }
 
         .left img {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            border-radius: 12px;
         }
 
-        .left .info {
-            margin-bottom: 10px;
+        .info {
+            margin-top: 20px;
         }
 
         .left h1 {
-            margin: 0;
-            font-size: 28px;
+            font-size: 30px;
+            margin-bottom: 10px;
         }
 
         .left p {
-            margin-top: 6px;
-            font-size: 14px;
+            font-size: 15px;
             color: #ccc;
         }
 
-        /* RIGHT SIDE */
+        /* RIGHT SIDE CONTENT */
         .right {
             width: 60%;
+            margin-left: 40%;
             padding: 40px;
+            height: 100vh;
+            overflow-y: auto;
+
+            /* Hide scrollbar */
+            scrollbar-width: none; /* Firefox */
         }
 
+        .right::-webkit-scrollbar {
+            display: none; /* Chrome / Safari / Edge */
+        }
+
+        /* PROJECT CARD */
         .project {
             background: white;
-            padding: 20px;
-            margin-bottom: 15px;
+            padding: 18px;
+            margin-bottom: 12px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
+        .level-title {
+            background: #222;
+            color: #ccc;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
         .project h3 {
             margin: 0;
+            font-size: 18px;
         }
 
         .project a {
             background: #111;
             color: white;
-            padding: 8px 14px;
+            padding: 8px 15px;
             border-radius: 6px;
             text-decoration: none;
-            transition: 0.2s;
+            transition: 0.3s;
+            font-size: 14px;
         }
 
         .project a:hover {
-            background: #333;
+            background: #444;
         }
 
-        /* MOBILE RESPONSIVE */
-        @media (max-width: 800px) {
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .left {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .right {
+                width: 100%;
+                margin-left: 0;
+                height: auto;
+                padding: 20px;
+            }
+
             .main {
                 flex-direction: column;
             }
-            .left, .right {
-                width: 100%;
-            }
         }
+
     </style>
 </head>
+
 <body>
 
 <div class="main">
 
     <!-- LEFT SIDE -->
     <div class="left">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" />
 
         <div class="info">
             <h1>Arman's JS Projects</h1>
@@ -113,6 +151,10 @@
     <!-- RIGHT SIDE -->
     <div class="right">
 
+        <div class="project level-title">
+            <h3>Level 1</h3>
+        </div>
+
         <div class="project">
             <h3>Download Timer</h3>
             <a href="./DownloadTimer/">Open</a>
@@ -122,10 +164,9 @@
             <h3>Random Page Generator</h3>
             <a href="./RandomPageGenerator/">Open</a>
         </div>
-        
 
         <div class="project">
-            <h3>Insagram Like</h3>
+            <h3>Instagram Like</h3>
             <a href="./Instagram/">Open</a>
         </div>
 
@@ -140,16 +181,20 @@
         </div>
 
         <div class="project">
-            <h3>Query Slector All</h3>
+            <h3>Query Selector All</h3>
             <a href="./QuerySelectorAll/">Open</a>
         </div>
-        <!-- ADD MORE PROJECTS LIKE THIS -->
-        <!-- 
-        <div class="project">
-            <h3>Project Name</h3>
-            <a href="./FolderName/">Open</a>
+
+        <div class="project level-title">
+            <h3>Level 2</h3>
         </div>
-        -->
+
+        <div class="project">
+            <h3>Reels</h3>
+            <a href="./Reels/">Open</a>
+        </div>
+
+        
 
     </div>
 
